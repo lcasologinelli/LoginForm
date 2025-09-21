@@ -1,0 +1,283 @@
+/* Normalize the page
+/* Text copied from Matt brictson normalize method */
+@import "/modern-normalize.css";
+
+/* Declaring variables */
+:root.neutral{
+    --background-image: none;
+    --first-evolution: none;
+    --second-evolution: none;
+    --background: #25292e;
+    --border-circle-type: 1px dashed var(--theme-color);
+    --theme-color: aqua;
+    --text-color: bisque;
+    --invalid-color: rgb(196, 25, 25);
+    --valid-color: rgb(3, 154, 3);
+    --final-evolution-height: 20em;
+    --final-evolution-width: 20em;
+
+}
+
+:root.charizard{
+    --background: #25292e;
+    --first-evolution: url("/svg/charmender.svg");
+    --second-evolution: url("/svg/charmeleon.svg");
+    --final-evolution: url("/svg/charizard.svg");
+    --first-evolution-drop-shadow: drop-shadow(0px 0px 60px rgb(255, 68, 0));
+    --second-evolution-drop-shadow: drop-shadow(0px 0px 60px rgb(255, 0, 0));
+    --border-circle-type: 1px dashed var(--theme-color);
+    --theme-color: aqua;
+    --text-color: bisque;
+    --invalid-color: rgb(196, 25, 25);
+    --valid-color: rgb(3, 154, 3);
+    --final-evolution-height: 20em;
+    --final-evolution-width: 20em;
+}
+
+:root.blastoise{
+    --background: #25292e;
+    --first-evolution: url("/svg/squirtle.svg");
+    --second-evolution: url("/svg/wortartle.svg");
+    --final-evolution: url("/svg/blastoise.svg");
+    --first-evolution-drop-shadow: drop-shadow(0px 0px 60px rgb(0, 255, 255));
+    --second-evolution-drop-shadow: drop-shadow(0px 0px 60px rgb(0, 26, 255));
+    --border-circle-type: 1px dashed var(--theme-color);
+    --theme-color: aqua;
+    --text-color: bisque;
+    --invalid-color: rgb(196, 25, 25);
+    --valid-color: rgb(3, 154, 3);
+    --final-evolution-height: 20em;
+    --final-evolution-width: 20em;    
+}
+
+:root.venusaur{
+    --background: #25292e;
+    --first-evolution: url("/svg/bulbasaur.svg");
+    --second-evolution: url("/svg/ivysaur.svg");
+    --final-evolution: url("/svg/venusaur.svg");
+    --first-evolution-drop-shadow: drop-shadow(0px 0px 60px rgb(51, 255, 0));
+    --second-evolution-drop-shadow: drop-shadow(0px 0px 60px rgb(0, 255, 76));
+    --border-circle-type: 1px dashed var(--theme-color);
+    --theme-color: aqua;
+    --text-color: bisque;
+    --invalid-color: rgb(196, 25, 25);
+    --valid-color: rgb(3, 154, 3);
+    --final-evolution-height: 20em;
+    --final-evolution-width: 20em;
+}
+
+/* default initialization */
+html,body{
+    box-sizing:border-box;
+    height: 100%;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+body{
+    background: var(--background);
+    font-family: 'Nimbus Mono PS', 'Courier New', monospace;
+    font-weight: normal;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* First Circle */
+
+.circleIn{
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 55em;
+    height: 55em;
+    border-radius: 50%;
+    background: transparent;
+    animation: rotate 30s linear infinite;
+}
+
+.pokeball-svg1{
+    position: relative;
+    left: -39px;
+    transition: background-color 2s ease-out;
+    border-radius: 50%;
+}
+.pokeball-svg2{
+    position: relative;
+    left: 39px;
+    transition: background-color 2s ease-out;
+    border-radius: 50%;  
+}
+
+@keyframes rotate {
+   from{
+    transform: rotate(0deg);
+   }
+   to{
+    transform: rotate(360deg);
+   }
+}
+
+/* Form handling inside the first circle */
+
+.form{
+    position: absolute;
+    color: var(--text-color);
+    border: var(--border-circle-type);
+    width: 55em;
+    height: 55em;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    gap: 8px;
+    padding: 5px;
+}
+
+.header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:15px
+}
+
+.header-pokeball{
+    width: 3em;
+    height: 3em;
+}
+.header-text{
+    text-shadow: 0px 0px 10px var(--theme-color);
+    color: var(--text-color);
+    font-size: 2em;
+}
+
+.choices-container{
+    position: relative;
+    top: 2em;
+    width: 30em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    gap: 16px;
+}
+
+.choiche-container{
+    display: flex;
+    margin: 2px;
+}
+
+/* Second Circle */
+
+.circleMid{
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70em;
+    height: 70em;
+    border-radius: 50%;
+    background: transparent;
+    border: var(--border-circle-type);
+    animation: rotate 40s backwards infinite;
+}
+
+.pokeball-svg3{
+    position: relative;
+    left: -32px;
+    transition: background-color 2s ease-out;
+    border-radius: 50%;
+}
+.pokeball-svg4{
+    position: relative;
+    left: 32px;
+    transition: background-color 2s ease-out;
+    border-radius: 50%;  
+}
+
+/* Third Circle */
+
+.circleOut{
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 85em;
+    height: 85em;
+    border-radius: 50%;
+    background: transparent;
+    border: var(--border-circle-type);
+    animation: rotate 50s linear infinite;
+}
+
+.pokeball-svg5{
+    position: relative;
+    left: -32px;
+    transition: background-color 2s ease-out;
+    border-radius: 50%;
+}
+.pokeball-svg6{
+    position: relative;
+    left: 32px;
+    transition: background-color 2s ease-out;
+    border-radius: 50%;  
+}
+
+
+/* Cardbox pokemon */
+
+.pokemon-theme-container{
+    position: absolute;
+    top: 100vh;
+    width: 100%;
+    height: 50em;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.card-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: 100%;
+    flex-grow: 1;
+    padding: 20px;
+    margin: 50px;
+}
+
+
+/* Images of first & second evolution */
+.first-evolution{
+    position: absolute;
+    left: 0;
+    margin-left: 30px;
+    width: 100px;
+    height: 100px;
+    background: var(--first-evolution);
+    filter: var(--first-evolution-drop-shadow);
+    z-index: 10;
+}
+.second-evolution{ 
+    position: absolute;
+    margin-right: 30px;
+    right: 0;
+    width: 100px;
+    height: 100px;
+    background: var(--second-evolution);
+    background-size: 100%;
+
+    filter: var(--second-evolution-drop-shadow);
+    z-index: 10;
+}
+
+.img{
+    width: 20em;
+    height: 20em;
+}

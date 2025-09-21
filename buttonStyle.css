@@ -1,0 +1,45 @@
+.btn{
+    font-family: 'Nimbus Mono PS', 'Courier New', monospace;
+    font-weight: normal;
+    position: absolute;
+    top: 20em;
+    width: 12em;
+    height: 2em;
+    align-self: center;
+    background-color: transparent;
+    border: 1px solid var(--text-color);
+    border-radius: 25px;
+    color: var(--text-color);
+    padding-left: 10px;
+    font-size: medium;
+    text-shadow: 0px 0px 10px var(--theme-color);
+    cursor: pointer;
+}
+
+.btn:hover{
+    border-color: var(--theme-color);
+    box-shadow: 0px 0px 2px 2px var(--theme-color);
+    color: var(--theme-color);
+}
+.btn:active{
+    width: calc(12em - 5px);
+    height: calc(2em - 2px);
+}
+
+.selection{
+    min-width: 20em;
+    flex-wrap: wrap;
+    border-radius: 50px;
+    background-color: var(--background);
+    cursor: pointer;
+}
+
+.selection:hover{
+    box-shadow: 0px 0px 10px 10px var(--theme-color);
+}
+.selection:active{
+    width: calc(var(--final-evolution-width) - 5px);
+    height: calc(var(--final-evolution-height) - 2px);
+}
+
+
